@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+a {
+	text-decoration: none;
+}
+
+.header {
+	padding: 6px;
+	display: flex;
+	justify-content: space-evenly;
+	gap: 50px;
+	width: 100vw;
+	/* background-color: #dad7cd; */
+	background-color: #fff;
+	max-height: 9vh;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	border-bottom: #344e41 solid 1px;
+}
+
+.logo {
+	background-image: linear-gradient(
+		315deg,
+		hsla(82, 20%, 62%, 1) 24%,
+		hsla(131, 22%, 29%, 1) 89%
+	);
+	color: transparent;
+	background-clip: text;
+	animation: logo 2s ease-in-out 1s infinite alternate-reverse;
+	font-family: 'Cookie', cursive;
+}
+
+@keyframes logo {
+	from {
+		background-image: linear-gradient(
+			315deg,
+			hsla(82, 20%, 62%, 1) 24%,
+			hsla(131, 22%, 29%, 1) 89%
+		);
+		transform: rotate(0deg) translateX(50px) rotate(0deg);
+		font-size: 1.8rem;
+	}
+	to {
+		background-image: linear-gradient(
+			315deg,
+			hsla(131, 22%, 29%, 1) 24%,
+			hsla(82, 20%, 62%, 1) 89%
+		);
+		transform: rotate(360deg) translateX(50px) rotate(-360px);
+		font-size: 2rem;
+	}
+}
+
+.logo:hover {
+	cursor: grab;
+}
+
+.navbar {
+	width: 50%;
+	border-radius: 10px;
+	background-color: #344e41;
+}
+
+.navlists {
+	list-style: none;
+	padding: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 5px 0;
+}
+
+.navlist a:is(:link, :visited, :focus) {
+	font-size: 1rem;
+	color: #dad7cd;
+}
+
+.navlist a:is(:hover) {
+	font-size: 1.1rem;
+	text-decoration: 2px underline solid #dad7cd;
+	text-underline-offset: 4px;
+}
+
+.btn {
+	background-color: #344e41;
+	padding: 10px;
+	border-radius: 10px;
+	color: #dad7cd;
+	font-size: 1rem;
+}
+
+.btn:is(:hover) {
+	font-size: 1.1rem;
+}
