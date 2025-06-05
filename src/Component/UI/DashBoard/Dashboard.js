@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import style from './Dashboard.module.css';
 import WalletContext from '../../../Store/wallet-context';
 import SearchBar from '../SearchBar/SearchBar';
-import Tokens from '../DisplayBalance/Tokens';
+import TokensBalance from '../DisplayBalance/TokensBalance';
+// import TransactionHistory from '../History/History';
 
 const Dashboard = () => {
 	const { wallet } = useContext(WalletContext);
@@ -14,9 +15,14 @@ const Dashboard = () => {
 			<h1 className={`${style['hero-h1']}  ${style['hero-heading-container']}`}>
 				ALTARA
 			</h1>
+			<h2 className={`${style['hero=h2']} ${style['hero-heading-container']}`}>
+				Track smarter. Move faster. Stay ahead.
+			</h2>
 			<p className={`${style['hero=h2']} ${style['hero-heading-container']}`}>
-				The Ultimate Web3 Portfolio Hub
+				Altara gives you full visibility into your tokens — across chains, in
+				real time.
 			</p>
+
 			<SearchBar />
 		</section>
 	);
@@ -24,7 +30,11 @@ const Dashboard = () => {
 	return (
 		<main className={style.main}>
 			{hero}
-			{wallet !== null ? <Tokens /> : ''}
+			{wallet !== null ? (
+				<TokensBalance address={wallet} />
+			) : (
+				<p>Please connect your wallet</p>
+			)}
 		</main>
 	);
 };

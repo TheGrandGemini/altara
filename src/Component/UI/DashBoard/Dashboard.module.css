@@ -4,14 +4,6 @@
 }
 
 .hero-section {
-	/* background-image: linear-gradient(
-		135deg,
-		#2f3e3b,
-		#344e41,
-		#525e56,
-		#7a8574,
-		#dad7cd
-	); */
 	max-height: max-content;
 	text-align: center;
 	padding: 30px;

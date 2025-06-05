@@ -2,11 +2,10 @@ import React, { useContext } from 'react';
 import style from './Header.module.css';
 import WalletContext from '../../../Store/wallet-context';
 import Button from '../../Utilities/Button';
+import { formatWalletAddress } from '../../Utilities/formatFtn';
 
 const Header = () => {
-	const { wallet } = useContext(WalletContext);
-
-	// const formattedWallet = `${wallet.slice(0, 6)}...${wallet.slice(-4)}`;
+	const { wallet, clearWallet } = useContext(WalletContext);
 
 	return (
 		<header className={style.header}>
@@ -28,19 +27,12 @@ const Header = () => {
 				</ul>
 			</nav>
 
-			{wallet ? (
-				<Button
-					className={`${style.wallet}  ${style.btn}`}
-					type='button'>
-					Disconnect Wallet
-				</Button>
-			) : (
-				<Button
-					className={`${style.wallet}  ${style.btn}`}
-					type='button'>
-					Connect Wallet
-				</Button>
-			)}
+			<button
+				onClick={clearWallet}
+				className={`${style.wallet}  ${style.btn}`}
+				type='button'>
+				{wallet ? formatWalletAddress(wallet) : 'Paste a wallet'}
+			</button>
 		</header>
 	);
 };

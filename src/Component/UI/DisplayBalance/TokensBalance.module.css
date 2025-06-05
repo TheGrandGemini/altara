@@ -1,0 +1,163 @@
+.tokens {
+	padding: 20px;
+	margin: 10px;
+}
+
+.walletInfo {
+	background-color: #344e41;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+	text-align: left;
+	color: #f8f9fa;
+}
+
+.tokenTable {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.tokenTable thead {
+	background-color: #344e41;
+	color: white;
+}
+
+.tokenTable th {
+	padding: 10px;
+	text-align: left;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.tokenTable tbody tr {
+	background-color: white;
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tokenTable tbody tr:hover {
+	transform: translateY(-4px) scale(1.015);
+	box-shadow: 0 4px 16px rgba(52, 78, 65, 0.12),
+		0 1.5px 6px rgba(52, 78, 65, 0.08);
+	background-color: #f5f7fa;
+}
+
+.tokenTable td {
+	padding: 10px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	text-align: left;
+	vertical-align: top;
+}
+
+.tokenInfo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.tokenLogo {
+	max-width: 40px;
+	max-height: 40px;
+	margin-right: 10px;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+.positiveChange {
+	color: green;
+}
+
+.negativeChange {
+	color: red;
+}
+
+@media (max-width: 600px) {
+	.tokens {
+		padding: 8px;
+		margin: 4px;
+	}
+
+	.walletInfo {
+		font-size: 1rem;
+		padding: 8px;
+	}
+
+	.tokenTable,
+	.tokenTable thead,
+	.tokenTable tbody,
+	.tokenTable tr,
+	.tokenTable th,
+	.tokenTable td {
+		display: block;
+		width: 100%;
+	}
+
+	.tokenTable thead {
+		display: none;
+	}
+
+	@keyframes cardFadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.tokenTable tr {
+		margin-bottom: 16px;
+		border: 1px solid #eee;
+		border-radius: 8px;
+		background: #fff;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+		padding: 8px;
+		animation: cardFadeIn 0.5s ease;
+	}
+
+	.tokenTable td {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 6px 8px;
+		font-size: 13px;
+		position: relative;
+		text-align: left;
+		word-wrap: break-word;
+	}
+
+	.tokenTable td[data-label]:before {
+		content: attr(data-label) ' :';
+		font-weight: bold;
+		color: #344e41;
+		font-size: 12px;
+		margin-bottom: 0;
+		display: inline;
+		min-width: 40px;
+	}
+
+	.tokenInfo {
+		gap: 5px;
+	}
+
+	.tokenLogo {
+		max-width: 24px;
+		max-height: 24px;
+		margin-right: 5px;
+	}
+
+	.tokenInfo p {
+		font-size: 12px;
+		margin: 0;
+	}
+
+	.tokenTable td:nth-child(2), /* Price */
+    .tokenTable td:nth-child(4)  /* Value */ {
+		font-size: 11px;
+	}
+}

@@ -5,21 +5,24 @@ import WalletContext from '../../../Store/wallet-context';
 
 const SearchBar = () => {
 	const [error, setError] = useState(null);
-	const inputRef = useRef(null);
 	const { setWallet } = useContext(WalletContext);
+	const [input, setInput] = useState('');
 
 	const isValidWalletAddress = (add) => {
 		const regex = /^0x[a-fA-F0-9]{40}$/;
 		return regex.test(add);
 	};
 
-	const handleSaveWallet = () => {
-		const input = inputRef.current.value.trim();
+	const handleChange = (e) => {
+		const value = e.target.value.trim();
+		setInput(value);
+	};
 
+	const handleSaveWallet = () => {
 		if (isValidWalletAddress(input)) {
 			setWallet(input);
 			setError(null);
-			inputRef.current.value = '';
+			setInput('');
 		} else {
 			setError('Invalid wallet address. Please enter a valid address');
 		}
@@ -30,14 +33,15 @@ const SearchBar = () => {
 			<input
 				type='text'
 				placeholder='Enter wallet address'
-				ref={inputRef}
+				value={input}
 				className={style.input}
+				onChange={handleChange}
 			/>
 			<Button
 				onClick={handleSaveWallet}
 				className={style.button}
 				type='submit'>
-				Fetch Balance
+				View Wallet
 			</Button>
 			{error && <p className={style.error}>{error}</p>}
 		</div>

@@ -92,3 +92,39 @@ a {
 .btn:is(:hover) {
 	font-size: 1.1rem;
 }
+
+/* Mobile styles */
+
+@media (max-width: 600px) {
+	.header {
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 0;
+		width: 100vw;
+		max-height: none;
+	}
+
+	.logo {
+		font-size: 2rem;
+		animation: none;
+		margin-left: 10px;
+	}
+
+	.navbar {
+		background-color: #344e41;
+		border-radius: 20px;
+		width: 70vw;
+	}
+
+	.navlists {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		padding: 10px;
+	}
+
+	.btn {
+		display: none;
+	}
+}
