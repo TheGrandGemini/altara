@@ -20,7 +20,7 @@
 
 - **Frontend**: React, TailwindCSS
 - **Web3**: Web3.js, Web3Modal
-- **Data Layer**: Covalent API
+- **Data Layer**: Moralis API
 - **Deployment**: Github & Vercel
 
 ---
