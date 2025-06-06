@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import style from './Dashboard.module.css';
 import WalletContext from '../../../Store/wallet-context';
 import SearchBar from '../SearchBar/SearchBar';
 import TokensBalance from '../DisplayBalance/TokensBalance';
-// import TransactionHistory from '../History/History';
+import TransactionHistory from '../History/History';
 
 const Dashboard = () => {
 	const { wallet } = useContext(WalletContext);
@@ -31,7 +31,10 @@ const Dashboard = () => {
 		<main className={style.main}>
 			{hero}
 			{wallet !== null ? (
-				<TokensBalance address={wallet} />
+				<Fragment>
+					<TokensBalance address={wallet} />
+					<TransactionHistory address={wallet} />
+				</Fragment>
 			) : (
 				<p>Please connect your wallet</p>
 			)}

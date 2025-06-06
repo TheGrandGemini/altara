@@ -18,7 +18,7 @@ const TokensTable = ({ tokens, loading, error, onRetry }) => {
 		tableContent = (
 			<tr>
 				<td
-					colSpan='4'
+					colSpan='5'
 					style={{ textAlign: 'center', color: 'red', padding: '24px 0' }}>
 					<span
 						role='img'
@@ -50,7 +50,7 @@ const TokensTable = ({ tokens, loading, error, onRetry }) => {
 		tableContent = (
 			<tr>
 				<td
-					colSpan='4'
+					colSpan='5'
 					style={{ textAlign: 'center' }}>
 					No tokens available
 				</td>
